@@ -13,6 +13,7 @@ add_library(thread-tester-engine-promises-src-core
     thread_manager.cpp
     thread_wrapper.cpp
     thread_wrapper_promiseMatrixCalc.cpp
+    thread_wrapper_promiseWithException.cpp
 )
 
 target_compile_options(thread-tester-engine-promises-src-core PRIVATE)

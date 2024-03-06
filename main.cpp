@@ -27,6 +27,9 @@ int main(int argc, char* argv[]) {
         case TEST_PROMISE_MATRIX_CALC:
             thread_mgr.runTest_promiseMatrixCalc();
             break;
+        case TEST_PROMISE_WITH_EXCEPTION:
+            thread_mgr.runTest_promiseWithException();
+            break;
         // Add more cases for additional test programs
 
         default:

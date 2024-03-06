@@ -11,6 +11,7 @@ public:
 
     // Tests
     void runTest_promiseMatrixCalc();
+    void runTest_promiseWithException();
 
     // Helpers
     std::string & get_finish_state_as_string(int finish_state, std::string & s);

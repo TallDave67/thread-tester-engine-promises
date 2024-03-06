@@ -1,30 +1,21 @@
-[2024-03-05 17:52:28::468843] {"event_type":"run", "event":"start", "object":"test", "id":"promiseMatrixCalc"}
-[2024-03-05 17:52:28::469308] {"event_type":"run", "event":"start", "object":"thread_wrapper", "id":promiseMatrixCalc_Worker_0_0}
-[2024-03-05 17:52:28::469689] {"event_type":"run", "event":"start", "object":"thread_wrapper", "id":promiseMatrixCalc_Worker_0_1}
-[2024-03-05 17:52:28::470041] {"event_type":"run", "event":"start", "object":"thread_wrapper", "id":promiseMatrixCalc_Worker_0_2}
-[2024-03-05 17:52:28::470391] {"event_type":"run", "event":"start", "object":"thread_wrapper", "id":promiseMatrixCalc_Worker_1_0}
-[2024-03-05 17:52:28::470674] {"event_type":"run", "event":"start", "object":"thread_wrapper", "id":promiseMatrixCalc_Worker_1_1}
-[2024-03-05 17:52:28::470959] {"event_type":"run", "event":"start", "object":"thread_wrapper", "id":promiseMatrixCalc_Worker_1_2}
-[2024-03-05 17:52:28::471221] {"event_type":"run", "event":"start", "object":"thread_wrapper", "id":promiseMatrixCalc_Worker_2_0}
-[2024-03-05 17:52:28::471428] {"event_type":"run", "event":"start", "object":"thread_wrapper", "id":promiseMatrixCalc_Worker_2_1}
-[2024-03-05 17:52:28::471616] {"event_type":"run", "event":"start", "object":"thread_wrapper", "id":promiseMatrixCalc_Worker_2_2}
-[2024-03-05 17:52:28::472047] {"event_type":"run", "event":"finish", "object":"thread_wrapper", "id":"promiseMatrixCalc_Worker_0_0", "duration_in_nanoseconds":1362}
-[2024-03-05 17:52:28::472118] {"event_type":"run", "event":"finish", "object":"thread_wrapper", "id":promiseMatrixCalc_Worker_0_0, "state":"SUCCESS"}
-[2024-03-05 17:52:28::472162] {"event_type":"run", "event":"finish", "object":"thread_wrapper", "id":"promiseMatrixCalc_Worker_0_1", "duration_in_nanoseconds":1401}
-[2024-03-05 17:52:28::472201] {"event_type":"run", "event":"finish", "object":"thread_wrapper", "id":promiseMatrixCalc_Worker_0_1, "state":"SUCCESS"}
-[2024-03-05 17:52:28::472240] {"event_type":"run", "event":"finish", "object":"thread_wrapper", "id":"promiseMatrixCalc_Worker_0_2", "duration_in_nanoseconds":824}
-[2024-03-05 17:52:28::472278] {"event_type":"run", "event":"finish", "object":"thread_wrapper", "id":promiseMatrixCalc_Worker_0_2, "state":"SUCCESS"}
-[2024-03-05 17:52:28::472317] {"event_type":"run", "event":"finish", "object":"thread_wrapper", "id":"promiseMatrixCalc_Worker_1_0", "duration_in_nanoseconds":778}
-[2024-03-05 17:52:28::472354] {"event_type":"run", "event":"finish", "object":"thread_wrapper", "id":promiseMatrixCalc_Worker_1_0, "state":"SUCCESS"}
-[2024-03-05 17:52:28::472393] {"event_type":"run", "event":"finish", "object":"thread_wrapper", "id":"promiseMatrixCalc_Worker_1_1", "duration_in_nanoseconds":783}
-[2024-03-05 17:52:28::472430] {"event_type":"run", "event":"finish", "object":"thread_wrapper", "id":promiseMatrixCalc_Worker_1_1, "state":"SUCCESS"}
-[2024-03-05 17:52:28::472470] {"event_type":"run", "event":"finish", "object":"thread_wrapper", "id":"promiseMatrixCalc_Worker_1_2", "duration_in_nanoseconds":807}
-[2024-03-05 17:52:28::472508] {"event_type":"run", "event":"finish", "object":"thread_wrapper", "id":promiseMatrixCalc_Worker_1_2, "state":"SUCCESS"}
-[2024-03-05 17:52:28::472547] {"event_type":"run", "event":"finish", "object":"thread_wrapper", "id":"promiseMatrixCalc_Worker_2_0", "duration_in_nanoseconds":443}
-[2024-03-05 17:52:28::472600] {"event_type":"run", "event":"finish", "object":"thread_wrapper", "id":promiseMatrixCalc_Worker_2_0, "state":"SUCCESS"}
-[2024-03-05 17:52:28::472721] {"event_type":"run", "event":"finish", "object":"thread_wrapper", "id":"promiseMatrixCalc_Worker_2_1", "duration_in_nanoseconds":833}
-[2024-03-05 17:52:28::472786] {"event_type":"run", "event":"finish", "object":"thread_wrapper", "id":promiseMatrixCalc_Worker_2_1, "state":"SUCCESS"}
-[2024-03-05 17:52:28::472831] {"event_type":"run", "event":"finish", "object":"thread_wrapper", "id":"promiseMatrixCalc_Worker_2_2", "duration_in_nanoseconds":459}
-[2024-03-05 17:52:28::472881] {"event_type":"run", "event":"finish", "object":"thread_wrapper", "id":promiseMatrixCalc_Worker_2_2, "state":"SUCCESS"}
-[2024-03-05 17:52:28::472987] {"event_type":"run", "event":"finish", "object":"test", "id":"promiseMatrixCalc"}
-[2024-03-05 17:52:28::473072] {"event_type":"output", "event":"[[3584,947,2889],[2716,3202,-2394],[240,-1704,3240]]", "object":"test", "id":"promiseMatrixCalc"}
+[2024-03-06 11:48:19::488385] {"event_type":"run", "event":"start", "object":"test", "id":"promiseMatrixCalc"}
+[2024-03-06 11:48:19::488791] {"event_type":"run", "event":"start", "object":"thread_wrapper", "id":promiseMatrixCalc_Worker_0_0}
+[2024-03-06 11:48:19::489078] {"event_type":"run", "event":"start", "object":"thread_wrapper", "id":promiseMatrixCalc_Worker_0_1}
+[2024-03-06 11:48:19::489369] {"event_type":"run", "event":"start", "object":"thread_wrapper", "id":promiseMatrixCalc_Worker_0_2}
+[2024-03-06 11:48:19::489891] {"event_type":"run", "event":"start", "object":"thread_wrapper", "id":promiseMatrixCalc_Worker_1_0}
+[2024-03-06 11:48:19::490187] {"event_type":"run", "event":"start", "object":"thread_wrapper", "id":promiseMatrixCalc_Worker_1_1}
+[2024-03-06 11:48:19::490417] {"event_type":"run", "event":"start", "object":"thread_wrapper", "id":promiseMatrixCalc_Worker_1_2}
+[2024-03-06 11:48:19::490650] {"event_type":"run", "event":"start", "object":"thread_wrapper", "id":promiseMatrixCalc_Worker_2_0}
+[2024-03-06 11:48:19::490943] {"event_type":"run", "event":"start", "object":"thread_wrapper", "id":promiseMatrixCalc_Worker_2_1}
+[2024-03-06 11:48:19::491174] {"event_type":"run", "event":"start", "object":"thread_wrapper", "id":promiseMatrixCalc_Worker_2_2}
+[2024-03-06 11:48:19::492218] {"event_type":"run", "event":"finish", "object":"thread_wrapper", "id":"promiseMatrixCalc_Worker_0_0, "state":"SUCCESS", "duration_in_nanoseconds":985}
+[2024-03-06 11:48:19::492322] {"event_type":"run", "event":"finish", "object":"thread_wrapper", "id":"promiseMatrixCalc_Worker_0_1, "state":"SUCCESS", "duration_in_nanoseconds":1660}
+[2024-03-06 11:48:19::492364] {"event_type":"run", "event":"finish", "object":"thread_wrapper", "id":"promiseMatrixCalc_Worker_0_2, "state":"SUCCESS", "duration_in_nanoseconds":1240}
+[2024-03-06 11:48:19::492394] {"event_type":"run", "event":"finish", "object":"thread_wrapper", "id":"promiseMatrixCalc_Worker_1_0, "state":"SUCCESS", "duration_in_nanoseconds":911}
+[2024-03-06 11:48:19::492423] {"event_type":"run", "event":"finish", "object":"thread_wrapper", "id":"promiseMatrixCalc_Worker_1_1, "state":"SUCCESS", "duration_in_nanoseconds":678}
+[2024-03-06 11:48:19::492451] {"event_type":"run", "event":"finish", "object":"thread_wrapper", "id":"promiseMatrixCalc_Worker_1_2, "state":"SUCCESS", "duration_in_nanoseconds":960}
+[2024-03-06 11:48:19::492480] {"event_type":"run", "event":"finish", "object":"thread_wrapper", "id":"promiseMatrixCalc_Worker_2_0, "state":"SUCCESS", "duration_in_nanoseconds":900}
+[2024-03-06 11:48:19::492508] {"event_type":"run", "event":"finish", "object":"thread_wrapper", "id":"promiseMatrixCalc_Worker_2_1, "state":"SUCCESS", "duration_in_nanoseconds":526}
+[2024-03-06 11:48:19::492570] {"event_type":"run", "event":"finish", "object":"thread_wrapper", "id":"promiseMatrixCalc_Worker_2_2, "state":"SUCCESS", "duration_in_nanoseconds":807}
+[2024-03-06 11:48:19::492597] {"event_type":"run", "event":"finish", "object":"test", "id":"promiseMatrixCalc"}
+[2024-03-06 11:48:19::492638] {"event_type":"output", "event":"[[3584,947,2889],[2716,3202,-2394],[240,-1704,3240]]", "object":"test", "id":"promiseMatrixCalc"}

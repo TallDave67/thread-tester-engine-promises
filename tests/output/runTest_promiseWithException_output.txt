@@ -1,0 +1,4 @@
+[2024-03-06 11:48:19::499686] {"event_type":"run", "event":"start", "object":"test", "id":"promiseWithException"}
+[2024-03-06 11:48:19::499994] {"event_type":"run", "event":"start", "object":"thread_wrapper", "id":promiseWithException_Worker}
+[2024-03-06 11:48:19::500753] {"event_type":"exception", "event":"thread could not do its work", "object":"test", "id":"promiseWithException"}
+[2024-03-06 11:48:19::500866] {"event_type":"run", "event":"finish", "object":"test", "id":"promiseWithException"}

@@ -2,6 +2,7 @@
 #include "event_logger.h"
 #include "thread_wrapper.h"
 #include "thread_wrapper_promiseMatrixCalc.h"
+#include "thread_wrapper_promiseWithException.h"
 #include <sstream>
 
 ThreadManager::ThreadManager()
@@ -73,21 +74,12 @@ void ThreadManager::runTest_promiseMatrixCalc()
             const auto & val_info = futures[i][j].get();
             THREAD_WRAPPER_PROMISE_MATRIX_CALC_MATRIX_C[val_info.row][val_info.col] = val_info.val;
 
-            // log the events
-            {
-                std::stringstream ss;
-                ss << "{\"event_type\":\"run\", \"event\":\"finish\", \"object\":\"thread_wrapper\", \"id\":\"" << val_info.run_details.id <<  "\", \"duration_in_nanoseconds\":" << val_info.run_details.timer.duration_in_nanoseconds() << "}";
-                std::string event = ss.str();
-                pg_event_logger->send_event(event);
-            }
-            {
-                // log the event
-                std::stringstream ss;
-                std::string finish_state_as_string;
-                ss << "{\"event_type\":\"run\", \"event\":\"finish\", \"object\":\"thread_wrapper\", \"id\":" << val_info.run_details.id << ", \"state\":\"" << get_finish_state_as_string(val_info.run_details.finish_state, finish_state_as_string) << "\"}";        
-                std::string event = ss.str();
-                pg_event_logger->send_event(event);
-            }
+            // log the event
+            std::stringstream ss;
+            std::string finish_state_as_string;
+            ss << "{\"event_type\":\"run\", \"event\":\"finish\", \"object\":\"thread_wrapper\", \"id\":\"" << val_info.run_details.id << ", \"state\":\"" << get_finish_state_as_string(val_info.run_details.finish_state, finish_state_as_string) <<  "\", \"duration_in_nanoseconds\":" << val_info.run_details.timer.duration_in_nanoseconds() << "}";
+            std::string event = ss.str();
+            pg_event_logger->send_event(event);
         }
     }
 
@@ -104,6 +96,59 @@ void ThreadManager::runTest_promiseMatrixCalc()
         event = "{\"event_type\":\"output\", \"event\":\"";
         event += get_matrix_as_string(THREAD_WRAPPER_PROMISE_MATRIX_CALC_MATRIX_C, output);
         event += "\", \"object\":\"test\", \"id\":\"promiseMatrixCalc\"}";
+        pg_event_logger->send_event(event);
+    }
+}
+
+void ThreadManager::runTest_promiseWithException()
+{
+    // log the event
+    std::string event;
+    event = "{\"event_type\":\"run\", \"event\":\"start\", \"object\":\"test\", \"id\":\"promiseWithException\"}";
+    pg_event_logger->send_event(event);
+
+    // create the promise
+    std::promise<THREAD_WRAPPER_PROMISE_WITH_EXCEPTION_RESULT> promise;
+
+    // create the future for the promise
+    std::future<THREAD_WRAPPER_PROMISE_WITH_EXCEPTION_RESULT> future = promise.get_future();
+
+    // create the worker_thread_wrapper
+    ThreadWrapper_promiseWithException_Worker worker_thread_wrapper {promise};
+
+    // add our thread wrapper to our thread driver
+    thread_driver.reserve(THREAD_WRAPPER_PROMISE_WITH_EXCEPTION_THREAD_COUNT);
+    thread_driver.add_thread_wrapper(&worker_thread_wrapper);
+
+    // tell the driver to run the threads
+    thread_driver.run();
+
+    // wait for the future
+    try
+    {
+        const auto & val_info = future.get();
+
+        // log the event
+        std::stringstream ss;
+        std::string finish_state_as_string;
+        ss << "{\"event_type\":\"run\", \"event\":\"finish\", \"object\":\"thread_wrapper\", \"id\":\"" << val_info.run_details.id << ", \"state\":\"" << get_finish_state_as_string(val_info.run_details.finish_state, finish_state_as_string) <<  "\", \"duration_in_nanoseconds\":" << val_info.run_details.timer.duration_in_nanoseconds() << "}";
+        std::string event = ss.str();
+        pg_event_logger->send_event(event);
+    }
+    catch (const std::exception& e)
+    {
+        // log the event
+        std::string event;
+        event = "{\"event_type\":\"exception\", \"event\":\"";
+        event += e.what();
+        event += "\", \"object\":\"test\", \"id\":\"promiseWithException\"}";
+        pg_event_logger->send_event(event);
+    }
+
+    // log the event
+    {
+        std::string event;
+        event = "{\"event_type\":\"run\", \"event\":\"finish\", \"object\":\"test\", \"id\":\"promiseWithException\"}";
         pg_event_logger->send_event(event);
     }
 }

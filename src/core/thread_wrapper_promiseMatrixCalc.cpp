@@ -68,7 +68,6 @@ ThreadWrapper_promiseMatrixCalc_Worker::~ThreadWrapper_promiseMatrixCalc_Worker(
 
 bool ThreadWrapper_promiseMatrixCalc_Worker::run()
 {
-    //std::thread work_thread(accumulate, numbers.begin(), numbers.end(), std::move(accumulate_promise));
     thread_ptr = std::make_unique<std::thread>(&do_row_by_col_product, id, m_row, m_col, std::move(m_promise));
     return thread_ptr ? true : false;  
 }
