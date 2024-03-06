@@ -1,0 +1,20 @@
+@startuml
+participant MainThread
+participant ChildThread
+participant Promise
+participant Future
+
+MainThread -> ChildThread: Create
+activate ChildThread
+ChildThread -> Promise: Set value
+activate Promise
+Promise --> ChildThread: Value set
+deactivate Promise
+deactivate ChildThread
+
+MainThread -> Future: Get value
+activate Future
+Future <-- MainThread: Received value
+deactivate Future
+
+@enduml

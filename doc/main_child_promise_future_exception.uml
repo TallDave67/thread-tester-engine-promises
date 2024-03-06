@@ -1,0 +1,20 @@
+@startuml
+participant MainThread
+participant ChildThread
+participant Promise
+participant Future
+
+MainThread -> ChildThread: Create
+activate ChildThread
+ChildThread -> Promise: Set exception
+activate Promise
+Promise --> ChildThread: Exception set
+deactivate Promise
+deactivate ChildThread
+
+MainThread -> Future: Get value / Exception
+activate Future
+Future <-- MainThread: Received exception
+deactivate Future
+
+@enduml
